@@ -1,36 +1,27 @@
-# discordpy-startup
+# 会議VCランダムBot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+Discordサーバーで使える、  
+**会議VCへのランダム振り分け／集合VCへの戻し／タイマー通知／人数表示だけやる超シンプルなBot**です。
 
-- Herokuでdiscord.pyを始めるテンプレートです。
-- Use Template からご利用ください。
-- 使い方はこちら： [Discord Bot 最速チュートリアル【Python&Heroku&GitHub】 - Qiita](https://qiita.com/1ntegrale9/items/aa4b373e8895273875a8)
+- `/ランダム` … 集合VCのメンバーを4人ずつランダムに会議VCへ振り分け
+- `/戻す` … 全員集合VCに戻す
+- `/タイマー` … 10分タイマー（1分前と終了時だけ通知）
+- `/人数` … 集合VCの人数表示
+- VC入室時にプロフィールURL案内（指定チャンネル履歴）も可能
 
-## 各種ファイル情報
+---
 
-### discordbot.py
-PythonによるDiscordBotのアプリケーションファイルです。
+## 使い方
 
-### requirements.txt
-使用しているPythonのライブラリ情報の設定ファイルです。
+1. **Python 3.9 以上が必要です**
+2. 必要なライブラリをインストール  
+ 
+   pip install -r requirements.txt
+.env または環境変数で
 
-### Procfile
-Herokuでのプロセス実行コマンドの設定ファイルです。
 
-### runtime.txt
-Herokuでの実行環境の設定ファイルです。
 
-### app.json
-Herokuデプロイボタンの設定ファイルです。
+DISCORD_TOKEN=あなたのボットトークン
+コード中の各種ID（サーバーID/チャンネルID/ロールID/管理者IDなど）は自分の環境に合わせて数字を直してください
 
-### .github/workflows/flake8.yaml
-GitHub Actions による自動構文チェックの設定ファイルです。
-
-### .gitignore
-Git管理が不要なファイル/ディレクトリの設定ファイルです。
-
-### LICENSE
-このリポジトリのコードの権利情報です。MITライセンスの範囲でご自由にご利用ください。
-
-### README.md
-このドキュメントです。
+サーバーにBotを招待（メッセージ履歴取得・VC移動の権限必要）
